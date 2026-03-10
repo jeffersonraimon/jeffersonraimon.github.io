@@ -11,18 +11,20 @@ order: 4
 
 ## Experiência
 Já atuei como **Monitor do Laboratório de Informática** pelo programa **MEDIOTEC/IFBA** e também como **Assessor de Projetos** na **Diretoria de Criação da EJC&T**.  
-Atualmente estou trabalhando como **Analista de Suporte Sênior na Voanet Telecomunicações**.
+Atualmente estou trabalhando como **Analista de NOC N2 Junior na Voanet Telecomunicações**.
 
 ## Formação
 - Técnico em Redes de Computadores – **SENAI**
 - Técnico em Informática para Internet – **IFBA**
-- Tecnólogo em Redes de Computadores – **Estácio** *(Cursando)*
+- Tecnólogo em Redes de Computadores – **Estácio** 
 - Computação – **UFBA** *(Cursando)*
+- Pós Graduação em Defesa Cibernética - **UNOPAR** (Cursando)
 
 ## Certificações
 - **MTCNA**
 - **MTCRE**
 - **JNCIA**
+- **FCP-SO**
 
 ## Hobbies
 - Fotografia
