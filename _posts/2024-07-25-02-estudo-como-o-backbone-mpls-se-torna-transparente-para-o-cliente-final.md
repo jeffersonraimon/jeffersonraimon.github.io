@@ -11,11 +11,11 @@ Postado originalmente no linkedin em: 11/02/2024
 
 O MPLS é uma tecnologia necessária (e imprescindível) nos dias de hoje. Imagina você ter toda uma infraestrutura de multilayer switchs e/ou roteadores assim:
 
-![](assets/img/posts/post-02/01.png)
+_![](assets/img/posts/post-02/01.png)_
 
 E para o cliente final ser algo parecido com isso:
 
-![](assets/img/posts/post-02/02.png)
+_![](assets/img/posts/post-02/02.png)_
 
 
 Ou até mesmo mais simples, pois a maquina do cliente na filial vai estar no mesmo dominio de broadcast (mesma LAN) que a maquina servidor na Matriz, como se tivesse diretamente conectada. Mas como isso é possivel? É mágica? Vamos entender…
@@ -27,33 +27,45 @@ MPLS
 O segredo do MPLS (Multiprotocol Label Switching) está na forma com que os frames são encaminhados. Esqueça a figura do frame ter que ir para camada 3 (virando um pacote) e consumir processamento da CPU ao consultar a tabela de roteamento. Estamos falando de labels, que são “anexadas” antes dos pacotes IP, agilizando muito o processo, já que o IGP (OSPF, por exemplo) já cumpriu seu papel de nos fornecer os melhores caminhos para as redes do backbone. Após isso, o MPLS designa labels para essas redes, formando um tipo de circuito virtual. Vejamos:
 
 ![](assets/img/posts/post-02/03.png)
-Tabela de roteamento (esquerda) e tabela de encaminhamento (direita)
+
+
+_Tabela de roteamento (esquerda) e tabela de encaminhamento (direita)_
 
 Temos acima ao lado esquerdo, a tabela de roteamento preenchida pelo OSPF e ao lado direito, a tabela de encaminhamento, onde podemos notar que de fato o MPLS utiliza as rotas providas pelo IGP.
 
 Adicionando esses labels após as rotas fornecidas pelo IGP, o MPLS já tem toda a topologia da rede mapeada. Vamos ver por exemplo do sentido RT1 para o RT8 ( ou seja da loopback 10.1.1.1 até 10.8.8.8 ) qual foi o ”caminho” marcado pelos labels.
 
 ![](assets/img/posts/post-02/04.png)
-Rotas para 10.8.8.8 na pespectiva de RT-1
+
+
+_Rotas para 10.8.8.8 na pespectiva de RT-1_
 
 Pelo IGP, vemos que possuimos 3 caminhos disponivel, sendo considerado o melhor a terceira opção (com o asterisco) via 10.127.12.2.  Dessa forma se o cliente mandasse um pacote destinado a maquina servidora atras o equipamento que dispoe da loopback 10.8.8.8, esse pacote teria que passar pelo processo de roteamento indo para a camada 3, o que seria mais lento e demandaria processamento de CPU. Porém, vamos ver o trabalho do MPLS:
 
 
 ![](assets/img/posts/post-02/05.png)
-Tabela de encaminhamento para o destino 10.8.8.8
+
+
+_Tabela de encaminhamento para o destino 10.8.8.8_
 
 Podemos ver os mesmos 3 caminhos e principalmente o label de saida correspondente ao melhor caminho designado pelo OSPF, o label 214.
 
 Agora vamos ver como ficou o LSP do destino 10.8.8.8, no sentido RT-1 > RT-8
 
 ![](assets/img/posts/post-02/06.png)
+
+
 Ida RT1 > RT8:
 
 ![](assets/img/posts/post-02/07.png)
-Caminho do traceroute
+
+
+_Caminho do traceroute_
 
 ![](assets/img/posts/post-02/08.png)
-RT-5
+
+
+_RT-5_
 
 Vimos que o RT5 tem como label de saida o POP Label, ou seja, ao encaminhar o frame para o destino, ele remove o label e com isso o pacote chega em RT8 em forma de pacote IP tradicional indo para a camada 3 e sendo lida pelo mesmo.
 
@@ -63,7 +75,9 @@ Por curiosidade, a volta RT8 > RT1:
 
 
 ![](assets/img/posts/post-02/10.png)
-Captura de um frame com cabeçalho MPLS
+
+
+_Captura de um frame com cabeçalho MPLS_
 
 Capturando um frame por exemplo, podemos ver como onde fica o cabeçalho de controle do MPLS, conhecido como Shim Header, ela fica no meio dos cabeçalhos de camada 2 e 3, e por isso dizem ser camada 2.5. Para nossa análise, os campos MPLS Label e MPLS Bottom Of Label Stack serão os mais uteis
 
@@ -78,20 +92,28 @@ Vamos finalmente utilizar o MPLS em conjunto com VPN de camada 2 (VPWS – Virtu
 Bom, como a matriz fica atrás da RT8, fizemos com que o RT01 seja vizinho LDP do RT08 anteriormente, pois eles não estão diretamentes conectados.
 
 ![](assets/img/posts/post-02/11.png)
-LDP Neighbors
+
+
+_LDP Neighbors_
 
 Para transportar os pacotes da maquina cliente da filial para a matriz, fechamos uma VPN de camada 2 entre o RT8 e RT1 passando a vlan do cliente (vlan 10)
 
 
 ![](assets/img/posts/post-02/12.png)
-VPWS Up
+
+
+_VPWS Up_
 
 ![](assets/img/posts/post-02/13.png)
-Teste da conectividade do VPWS
+
+
+_Teste da conectividade do VPWS_
 
 
 ![](assets/img/posts/post-02/14.png)
-Representação do túnel VPWS
+
+
+_Representação do túnel VPWS_
 
 Configuração no cliente
 
@@ -103,13 +125,19 @@ PC SERVIDOR: IP 172.25.0.10 / MAC: 50:C3:E9:00:41:00
 
 
 ![](assets/img/posts/post-02/15.png)
-Configuração de IPs no cliente e servidor
+
+
+_Configuração de IPs no cliente e servidor_
 
 ![](assets/img/posts/post-02/16.png)
-Configuração da VLAN 10 nos Switchs do cliente
+
+
+_Configuração da VLAN 10 nos Switchs do cliente_
 
 ![](assets/img/posts/post-02/17.png)
-Teste de conectividade entre o PC e o Servidor do cliente
+
+
+_Teste de conectividade entre o PC e o Servidor do cliente_
 
 Descobrindo o segredo por trás da mágica
 
@@ -121,30 +149,40 @@ Ao capturar os pacotes a interface interna da rede LAN do Switch (e0/1) na Filia
 
 
 ![](assets/img/posts/post-02/18.png)
-Frames ARP
+
+
+_Frames ARP_
 
 
 ![](assets/img/posts/post-02/19.png)
-ICMP
+
+
+_ICMP_
 
 Apenas como comparação, em uma rede roteada (sem MPLS), o MAC que veriamos seria do Roteador do ISP (RT-01), pois ele seria o gateway do cliente e roteadores não transpoem camada 2. Conforme imagem de exemplo abaixo, o roteador ao ler o conteudo em camada 3  (passo 3) e realizar o roteamento (passo 4), ele adiciona na camada 2 o proprio endereço MAC da sua interface física (passo 5).
 
 
 ![](assets/img/posts/post-02/20.png)
+
+
 Roteamento na visão do Modelo OSI
 
 Ao capturar os pacotes na interface externa do Switch da Filial (e0/0) podemos ver a VLAN 10 que o provedor nos designou para realizar o transporte. Até aqui tudo bem…
 
 
 ![](assets/img/posts/post-02/21.png)
-VLAN ID 10 no campo 802.1Q Virtual LAN
+
+
+_VLAN ID 10 no campo 802.1Q Virtual LAN_
 
 RT-1 (Gi0/2.14)
 
 Capturando os pacotes na interface de saida do RT-1 onde ele está encaminhando os frames, já podemos acompanhar a mágica acontecendo. É possivel ver o encapsulamento Dot1q da vlan 14 da interface, e o principal: foi criado uma pilha (stack) de cabeçalho MPLS com 2 labels, 408 e 800, sendo o 408 referente a infra (LSP – Label Switching Path) e 800 o de serviço da VPN, conforme o campo MPLS Bottom of Label Stack
 
 ![](assets/img/posts/post-02/22.png)
-Captura ICMP
+
+
+_Captura ICMP_
 
 
 Abrindo o cabeçalho do 802.1Q, podemos ver que o campo EtherType está definido como 0x8847, fazendo com que a consulta não considere a tabela de encaminhamento de pacotes IP, e sim uma tabela específica para operações com labels. (a Forwarding-Table do MPLS)
@@ -155,7 +193,9 @@ Verificando no RT1, podemos ver que o label 408 se trata do label correspondente
 
 
 ![](assets/img/posts/post-02/24.png)
-Tabela de encaminhamento para 10.8.8.8 no RT-1
+
+
+_Tabela de encaminhamento para 10.8.8.8 no RT-1_
 
 RT-4 (Gi0/1.45)
 
@@ -163,13 +203,17 @@ Na interface de saida do RT-4, podemos notar como mudança: as alterações de M
 
 
 ![](assets/img/posts/post-02/25.png)
-Mudanças no cabeçalhos MPLS ao ser encaminhado por RT-4
+
+
+_Mudanças no cabeçalhos MPLS ao ser encaminhado por RT-4_
 
 Verificando no RT-4
 
 
 ![](assets/img/posts/post-02/26.png)
-Tabela de encaminhamento correspondente ao label 408 no RT-4
+
+
+_Tabela de encaminhamento correspondente ao label 408 no RT-4_
 
 RT-5 (Gi0/0.58)
 
@@ -177,12 +221,16 @@ No RT-5, podemos ver que ao encaminhar o frame para o RT-8, por ser o destino fi
 
 
 ![](assets/img/posts/post-02/27.png)
-Captura em que consta a remoção do cabeçalho LSP
+
+
+_Captura em que consta a remoção do cabeçalho LSP_
 
 Podemos validar que no destino 10.8.8.8, temos um Pop Label (remoção da label da infraestrutura)
 
 ![](assets/img/posts/post-02/28.png)
-Tabela de encaminhamento correspondente ao label 510 no RT-5 com Pop Label
+
+
+_Tabela de encaminhamento correspondente ao label 510 no RT-5 com Pop Label_
 
 
 RT-8 (Gi0/3.10)
@@ -191,28 +239,38 @@ Finalmente no RT-8, podemos ver que ao ser encaminhado para o cliente, foi remov
 
 
 ![](assets/img/posts/post-02/29.png)
-Captura RT-8 entregando frame ao switch do cliente na Matriz
+
+
+_Captura RT-8 entregando frame ao switch do cliente na Matriz_
 
 
 ![](assets/img/posts/post-02/30.png)
-Label 800 referente ao VPWS no RT-8
+
+
+_Label 800 referente ao VPWS no RT-8_
 
 Por curiosidade, nesse demonstração, a resposta ICMP foi por outro caminho, RT-8 > RT-6 > RT-2 > RT1.
 
 
 ![](assets/img/posts/post-02/31.png)
-Captura da resposta ICMP no RT-8
+
+
+_Captura da resposta ICMP no RT-8_
 
 Verificando no RT-1 o label 100
 
 
 ![](assets/img/posts/post-02/32.png)
-Label 100 referente ao VPWS no RT-1
+
+
+_Label 100 referente ao VPWS no RT-1_
 
 De forma didática e simples , seria mais ou menos assim todo o processo (pacote ida):
 
 
 ![](assets/img/posts/post-02/capa.png)
+
+
 Imagem didática do processo – Fonte: Autor
 
 ### Conclusão
@@ -227,12 +285,12 @@ Referências
 
 Labs feitos no PNETLAB v6, utilizando Cisco vIOS 15, Cisco IOL, e Linux Debian
 
-https://www.cisco.com/c/en/us/td/docs/ios_xr_sw/iosxr_r3-7/mpls/command/reference/gr37fwd.html
+[MPLS Forwarding Commands on Cisco IOS XR Software](https://www.cisco.com/c/en/us/td/docs/ios_xr_sw/iosxr_r3-7/mpls/command/reference/gr37fwd.html)
 
-https://www.youtube.com/watch?v=b_n7A6Pejak
+[[#SemanaCap 4] Curso “MPLS: Teoria e Implementação utilizando L2VPN”](https://www.youtube.com/watch?v=b_n7A6Pejak)
 
-https://www.youtube.com/watch?v=YFOBLyf2SG0
+[Análise de Tráfego em Redes TCP/IP com tcpdump - 2ª parte](https://www.youtube.com/watch?v=YFOBLyf2SG0)
 
-https://community.cisco.com/t5/blogues-de-routing-switching/o-que-%C3%A9-mpls-e-por-que-mpls/ba-p/4284475
+[O que é MPLS e por que MPLS?](https://community.cisco.com/t5/blogues-de-routing-switching/o-que-%C3%A9-mpls-e-por-que-mpls/ba-p/4284475)
 
-https://www.cisco.com/c/pt_br/support/docs/multiprotocol-label-switching-mpls/mpls/213238-mpls-l2vpn-pseudowire.html
+[Entender o MPLS L2VPN Pseudowire](https://www.cisco.com/c/pt_br/support/docs/multiprotocol-label-switching-mpls/mpls/213238-mpls-l2vpn-pseudowire.html)

@@ -3,4 +3,6 @@ title: "06 | Por que não bloquear totalmente o ICMPv6: Entendendo a importânci
 date: 2024-07-28 00:00:00 -0300
 categories: [Artigos]
 tags: [ICMPv6, IPv6, PMTUD]
+image:
+  path: assets/img/posts/post-06/capa.jpg
 ---

@@ -3,4 +3,6 @@ title: "18 | Qualidade de Serviço (QoS) em Mikrotik: Marcação de Pacotes e Qu
 date: 2024-09-25 00:00:00 -0300
 categories: [Artigos]
 tags: [QoS, Mikrotik, Networking]
+image:
+  path: assets/img/posts/post-18/capa.png
 ---
