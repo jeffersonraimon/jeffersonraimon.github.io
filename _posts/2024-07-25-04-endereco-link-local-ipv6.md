@@ -6,3 +6,10 @@ tags: [IPv6, LinkLocal, Networking]
 image:
   path: assets/img/posts/post-04/capa.jpg
 ---
+
+![](assets/img/posts/post-04/01.jpg)
+![](assets/img/posts/post-04/02.jpg)
+![](assets/img/posts/post-04/03.jpg)
+![](assets/img/posts/post-04/04.jpg)
+![](assets/img/posts/post-04/05.jpg)
+![](assets/img/posts/post-04/06.jpg)

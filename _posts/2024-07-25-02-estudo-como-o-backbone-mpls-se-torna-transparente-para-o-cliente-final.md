@@ -11,11 +11,11 @@ Postado originalmente no linkedin em: 11/02/2024
 
 O MPLS é uma tecnologia necessária (e imprescindível) nos dias de hoje. Imagina você ter toda uma infraestrutura de multilayer switchs e/ou roteadores assim:
 
-_![](assets/img/posts/post-02/01.png)_
+![](assets/img/posts/post-02/01.png)
 
 E para o cliente final ser algo parecido com isso:
 
-_![](assets/img/posts/post-02/02.png)_
+![](assets/img/posts/post-02/02.png)
 
 
 Ou até mesmo mais simples, pois a maquina do cliente na filial vai estar no mesmo dominio de broadcast (mesma LAN) que a maquina servidor na Matriz, como se tivesse diretamente conectada. Mas como isso é possivel? É mágica? Vamos entender…
