@@ -326,7 +326,7 @@ Fiz a discagem PPPoE e obtenho o IP ```100.64.128.254```.
 
 ![](assets/img/posts/post-16/06.png)
 
-Utilizando o MTR podemos ver que temos conectividade com o servidor do AS200. É possivel notar o efeito da PBR, que desviou o trafego para o CGNAT (IP 10.200.10.1).
+Utilizando o MTR podemos ver que temos conectividade com o servidor do AS200. É possivel notar o efeito da PBR, que desviou o trafego para o CGNAT (```IP 10.200.10.1```).
 
 ![](assets/img/posts/post-16/07.png)
 
