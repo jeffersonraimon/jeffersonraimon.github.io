@@ -6,3 +6,4 @@ tags: [NAT, Networking, Troubleshooting]
 image:
   path: assets/img/posts/post-15/capa.png
 ---
+

@@ -11,6 +11,8 @@ Neste tutorial, vou mostrar como configurei meu homelab para garantir alta dispo
 
 Topologia resumida
 
+![](assets/img/posts/post-14/capa.png)
+
 ## Servidores do Ambiente
 
 ### Server 1
@@ -192,13 +194,14 @@ services:
 ```
 Como o meu Adguard Home no LXC é o principal, defino ele como o Origin e o Replica o do Orange Pi. Qualquer alteração que eu fizer no Origin, será replicado no secundário.
 
+![](assets/img/posts/post-14/01.png)
 
 Agora é só configurar na sua rede o servidor DNS com o IP Virtual e pronto 🙂
 
 Bônus
 Como utilizo uma RB750Gr3 com RouterOS v7, posso configurar o Netwatch para monitorar os IPs dos servidores na porta TCP 53. Dependendo do status (UP ou DOWN) desses IPs, posso ajustar as configurações de DNS no DHCP/ND. Se o status estiver UP, os meus servidores DNS serão configurados; caso esteja DOWN, o DNS recursivo do meu provedor será utilizado.
 
-
+![](assets/img/posts/post-14/02.png)
 
 Também é possivel adicionar um template no zabbix para notificações:
 
