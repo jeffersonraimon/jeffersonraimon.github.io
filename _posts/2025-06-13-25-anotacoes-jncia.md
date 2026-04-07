@@ -507,7 +507,7 @@ root@ROUTER-01#
 ```
 
 Para desfazer uma configuração antiga e as outras subsequentes
-
+```
 [edit]
 root@ROUTER-01# rollback 9 
 load complete
