@@ -540,6 +540,7 @@ root@ROUTER-01# set interfaces ge-0/0/0 disable
 root@ROUTER-01# set protocols ospf disable
 ```
 
+
 ```deactivate/activate```
 
 O Junos não vai processar configurações que estejam como deactivate
