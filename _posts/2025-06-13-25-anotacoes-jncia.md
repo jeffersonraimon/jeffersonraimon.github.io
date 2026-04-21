@@ -532,10 +532,14 @@ Comandos ```disable/deactivate``` (e ```activate```)
 
 ```disable```
 
+disable
+
 Útil para desabilitar interfaces e protocolos
+
 ```
 [edit]
 root@ROUTER-01# set interfaces ge-0/0/0 disable
+
 [edit]
 root@ROUTER-01# set protocols ospf disable
 ```
