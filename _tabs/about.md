@@ -39,7 +39,7 @@ Atualmente estou trabalhando como **Analista de NOC N2 Junior na Voanet Telecomu
 Caso o material deste site tenha sido útil para você, se desejar, aceito doações por **Pix** ou **Sats**.
 
 **Chave Pix:**  
-`raimonpix@gmail.com`
+`raimonpix @gmail.com`
 
 **Endereço BTC:**  
 `bc1qc8epr6ac7u6apz49ljxlsy63teh3gywp9eax4l`
