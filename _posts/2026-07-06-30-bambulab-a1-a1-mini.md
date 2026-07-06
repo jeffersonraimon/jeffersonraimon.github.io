@@ -14,7 +14,7 @@ Recentemente encontrei um excelente artigo em inglês sobre otimização da **Ba
 A tradução será publicada aqui no blog, preservando o máximo possível das informações técnicas do conteúdo original, para facilitar o acesso de quem prefere ler em português. O crédito pelo conteúdo original é do site **3D Printed Decor**, e recomendo a leitura da versão original para quem também acompanha materiais em inglês.
 
 Artigo original:
-https://3dprinteddecor.com/bambu-lab-a1-mini-settings-guide-speed-quality-optimization/
+<https://3dprinteddecor.com/bambu-lab-a1-mini-settings-guide-speed-quality-optimization/>
 
 Espero que essa tradução seja útil tanto para quem está começando na impressão 3D quanto para quem deseja extrair ainda mais desempenho da Bambu Lab A1/A1 Mini.
 
