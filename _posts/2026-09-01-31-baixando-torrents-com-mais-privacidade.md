@@ -367,9 +367,7 @@ O teste com curl confirma o IP do Gluetun, mas eu queria validar algo mais impor
 
 *qual endereço IP um tracker realmente enxerga vindo do qBittorrent?*
 
-Para isso utilizei o:
-
-[IPLeak.net](ipleak.net)
+Para isso utilizei o IPLeak.net
 
 Na seção Torrent Address detection, o site fornece um Magnet Link específico para teste.
 
