@@ -16,7 +16,7 @@ timezone: America/Bahia
 
 title: Jefferson Raimon # the main title
 
-tagline: Blog pessoal sobre redes de computadores, roteamento e infraestrutura de internet. Compartilho estudos, laboratórios e tutoriais práticos envolvendo BGP, MPLS, IPv6, MikroTik, virtualização e ambientes de ISP. # it will display as the subtitle
+tagline: Blog sobre redes, roteamento e infraestrutura de internet, com estudos, laboratórios e tutoriais práticos sobre BGP, MPLS, IPv6, MikroTik, virtualização e ambientes ISP. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
  Dicas, Artigos, Estudos e laboratórios sobre redes, roteamento e infraestrutura de provedores.
