@@ -18,7 +18,7 @@ Atualmente estou trabalhando como **Analista de NOC N2 Junior na Voanet Telecomu
 - Técnico em Informática para Internet – **IFBA**
 - Tecnólogo em Redes de Computadores – **Estácio** 
 - Computação – **UFBA** *(Cursando)*
-- Pós Graduação em Defesa Cibernética - **UNOPAR** (Cursando)
+- Pós Graduação em Defesa Cibernética - **UNOPAR** 
 
 ## Certificações
 - **MTCNA**
