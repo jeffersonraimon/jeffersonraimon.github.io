@@ -13,7 +13,7 @@ Depois de ler os 7 livros de Harry Potter, decidi começar a ler os livros das C
 
 E aí começou a busca pelos livros.
 
-Como prefiro ler no meu Kindle, comecei a procurar pelos livros em formato digital e, pesquisando pela internet, acabei encontrando o **Polvo Livros** (https://polvolivros.com/).
+Como prefiro ler no meu Kindle, comecei a procurar pelos livros em formato digital e, pesquisando pela internet, acabei encontrando o **Polvo Livros** <https://polvolivros.com>.
 
 ## O que é o Polvo Livros?
 
@@ -69,7 +69,7 @@ O problema é que o Kindle não trabalha nativamente com EPUB como formato de le
 
 Mas isso não significa que você não possa utilizar os EPUB no Kindle.
 
-A própria Amazon oferece uma forma bastante simples de fazer isso através do **Send to Kindle** (https://www.amazon.com/gp/sendtokindle).
+A própria Amazon oferece uma forma bastante simples de fazer isso através do **Send to Kindle** <https://www.amazon.com/gp/sendtokindle>.
 
 Você pode enviar o arquivo EPUB pelo serviço da Amazon e os próprios servidores da Amazon fazem a conversão para um formato compatível com o Kindle.
 
@@ -79,7 +79,7 @@ Cada Kindle possui um endereço de e-mail associado à conta da Amazon. Basta en
 
 ### E ainda existe o Calibre
 
-Se você prefere fazer a conversão por conta própria, também existe o **Calibre** (https://calibre-ebook.com/).
+Se você prefere fazer a conversão por conta própria, também existe o **Calibre** <https://calibre-ebook.com>.
 
 O Calibre é um programa muito conhecido para gerenciamento de livros digitais e permite converter os arquivos entre diversos formatos.
 
