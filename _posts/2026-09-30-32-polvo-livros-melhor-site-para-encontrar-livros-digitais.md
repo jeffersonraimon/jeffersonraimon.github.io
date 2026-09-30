@@ -7,8 +7,6 @@ image:
   path: assets/img/posts/post-32/capa.png
 ---
 
-![](assets/img/posts/post-32/capa.png)
-
 **OFFTOPIC**
 
 Depois de ler os 7 livros de Harry Potter, decidi começar a ler os livros das Crônicas de Gelo e Fogo.
