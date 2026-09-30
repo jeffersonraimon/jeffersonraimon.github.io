@@ -92,5 +92,8 @@ Você pode baixar o EPUB, importar no Calibre e fazer a conversão para MOBI ant
 Eu particularmente acho o Send to Kindle mais prático, porque não preciso ficar convertendo manualmente cada arquivo.
 
 
+![](assets/img/posts/post-32/03.jpeg)
+
+
 Então é isso. Para quem gosta de ler no celular, tablet, computador ou Kindle, achei uma opção interessante para deixar salva nos favoritos.
 
