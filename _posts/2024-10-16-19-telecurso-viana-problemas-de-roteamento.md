@@ -188,6 +188,12 @@ router bgp 65001
 ```
 ![](assets/img/posts/post-19/16.png)
 
+Extra:
+JunoS
+
+set protocols bgp group RT-JUNIPER-02 neighbor 10.23.0.2 advertise-peer-as
+
+set logical-systems RT-JUNIPER-04 routing-options autonomous-system loops 2
 
 ## Problema 03:
 
