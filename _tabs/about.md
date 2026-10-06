@@ -10,7 +10,7 @@ order: 4
 **Analista de NOC N2 Junior**
 
 ## Experiência
-Já atuei como **Monitor do Laboratório de Informática** pelo programa **MEDIOTEC/IFBA**, **Assessor de Projetos** na **Diretoria de Criação da EJC&T** e também como **Analista de NOC N2 Junior na Voanet Telecomunicações** .  
+Já atuei como **Monitor do Laboratório de Informática** pelo programa **MEDIOTEC/IFBA**, **Assessor de Projetos** na **Diretoria de Criação da EJC&T** e também como **Analista de NOC N2 Junior na Voanet Telecomunicações**.  
 Atualmente estou trabalhando como **Analista de NOC N2 Pleno na Vonti Tecnologia**.
 
 ## Formação
